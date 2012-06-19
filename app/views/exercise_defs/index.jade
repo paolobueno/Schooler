@@ -1,0 +1,24 @@
+.page-header
+  h1 Index of exercise_def
+
+.row
+  .span12
+      p!= link_to ('<i class="icon-plus icon-white"></i> New exercise_def', path_to.new_exercise_def(), {class: 'btn btn-primary'})
+      if exercise_defs.length > 0
+        table.table.table-striped
+          thead
+            tr
+              th ID
+              th Actions
+            tbody
+              - exercise_defs.forEach(function (exercise_def) {
+                tr
+                  td
+                    strong!= link_to('exercise_def #' + exercise_def.id, path_to.exercise_def(exercise_def))
+                  td
+                    != link_to('<i class="icon-edit icon-white"></i> Edit', path_to.edit_exercise_def(exercise_def), {class: 'btn btn-mini btn-primary'}) + ' '
+                    != link_to('<i class="icon-remove icon-white"></i> Delete', path_to.exercise_def(exercise_def), {class: 'btn btn-mini btn-danger', method: 'delete', remote: true, jsonp: '(function (u) {location.href = u;})'})
+              - });
+      else
+        p.alert.alert-block.alert-info
+          strong No exercise_defs were found.

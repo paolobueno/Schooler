@@ -1,0 +1,23 @@
+.page-header
+  h1 Details of exercise_def
+
+table.table.table-bordered
+  tbody(about=path_to.exercise_def(exercise_def))
+    tr
+      th description
+      td= exercise_def.description
+
+    tr
+      th max_mark
+      td= exercise_def.max_mark
+
+    tr
+      th difficulty
+      td= exercise_def.difficulty
+
+
+.well
+  != link_to('Edit', path_to.edit_exercise_def(exercise_def), {class: 'btn primary'}) + ' '
+  != link_to('Delete', path_to.exercise_def(exercise_def), {class: 'btn danger', method: 'delete', remote: true, jsonp: '(function (u) { location.href = u; })'})
+  span= ' or '
+  != link_to('Back to index', path_to.exercise_defs())

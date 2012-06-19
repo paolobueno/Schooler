@@ -1,0 +1,20 @@
+.control-group
+  != form.label("name", false, {class: "control-label"})
+  .controls
+    != form.input("name")
+.control-group
+  != form.label("test_command", false, {class: "control-label"})
+  .controls
+    != form.input("test_command")
+.control-group
+  != form.label("ace_layout", false, {class: "control-label"})
+  .controls
+    != form.input("ace_layout")
+.control-group
+  != form.label("extension", false, {class: "control-label"})
+  .controls
+    != form.input("extension")
+.control-group
+  != form.label("test_extension", false, {class: "control-label"})
+  .controls
+    != form.input("test_extension")

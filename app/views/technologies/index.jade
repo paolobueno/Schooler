@@ -1,0 +1,24 @@
+.page-header
+  h1 Index of technology
+
+.row
+  .span12
+      p!= link_to ('<i class="icon-plus icon-white"></i> New technology', path_to.new_technology(), {class: 'btn btn-primary'})
+      if technologies.length > 0
+        table.table.table-striped
+          thead
+            tr
+              th ID
+              th Actions
+            tbody
+              - technologies.forEach(function (technology) {
+                tr
+                  td
+                    strong!= link_to('technology #' + technology.id, path_to.technology(technology))
+                  td
+                    != link_to('<i class="icon-edit icon-white"></i> Edit', path_to.edit_technology(technology), {class: 'btn btn-mini btn-primary'}) + ' '
+                    != link_to('<i class="icon-remove icon-white"></i> Delete', path_to.technology(technology), {class: 'btn btn-mini btn-danger', method: 'delete', remote: true, jsonp: '(function (u) {location.href = u;})'})
+              - });
+      else
+        p.alert.alert-block.alert-info
+          strong No technologies were found.

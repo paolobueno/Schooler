@@ -1,0 +1,30 @@
+{
+  "name": "schooler",
+  "version": "0.0.1",
+  "engines": [
+    "node >= 0.4.0"
+  ],
+  "main": "server.coffee",
+  "dependencies": {
+    "jade": "*",
+    "jade-ext": "git://github.com/paolobueno/jade-ext",
+    "express": "~2.x",
+    "railway": "git://github.com/paolobueno/express-on-railway",
+    "jugglingdb": ">= 0.1.0",
+    "coffee-script": ">= 1.1.1"
+  },
+  "devDependencies": {
+    "nodeunit": "*",
+    "sinon": "*",
+    "semicov": "*"
+  },
+  "scripts": {
+    "test": "nodeunit test/*/*"
+  },
+  "optionalDependencies": {},
+  "author": "Paolo Bueno <paolohaji@gmail.com>",
+  "description": "Cursos de informatica interativos inspirado em codeschool.com",
+  "repository": {
+    "url": "github.com/paolobueno/schooler"
+  }
+}

@@ -1,0 +1,12 @@
+.control-group
+  != form.textarea("description", false, {class: "control-label"})
+  .controls
+    != form.input("description")
+.control-group
+  != form.label("max_mark", false, {class: "control-label" , type: "number"})
+  .controls
+    != form.input("max_mark")
+.control-group
+  != form.label("difficulty", false, {class: "control-label", type: "number"})
+  .controls
+    != form.input("difficulty")

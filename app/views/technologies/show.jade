@@ -1,0 +1,31 @@
+.page-header
+  h1 Details of technology
+
+table.table.table-bordered
+  tbody(about=path_to.technology(technology))
+    tr
+      th name
+      td= technology.name
+
+    tr
+      th test_command
+      td= technology.test_command
+
+    tr
+      th ace_layout
+      td= technology.ace_layout
+
+    tr
+      th extension
+      td= technology.extension
+
+    tr
+      th test_extension
+      td= technology.test_extension
+
+
+.well
+  != link_to('Edit', path_to.edit_technology(technology), {class: 'btn primary'}) + ' '
+  != link_to('Delete', path_to.technology(technology), {class: 'btn danger', method: 'delete', remote: true, jsonp: '(function (u) { location.href = u; })'})
+  span= ' or '
+  != link_to('Back to index', path_to.technologies())

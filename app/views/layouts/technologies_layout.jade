@@ -1,0 +1,32 @@
+!!! 5
+html
+  head
+    title= title
+    != stylesheet_link_tag('bootstrap', 'style', 'bootstrap-responsive')
+    != csrf_meta_tag()
+  body
+    .navbar
+      .navbar-inner
+        .container
+          a.brand Project Name
+
+    .container
+      - var flash = request.flash('info').pop(); if (flash) {
+        .alert.alert-info
+          a.close(data-dismiss='alert') ×
+          span= flash
+      - }
+
+      - flash = request.flash('error').pop(); if (flash) {
+        .alert.alert-error
+          a.close(data-dismiss='alert') ×
+          span= flash
+      - }
+
+      != body
+
+      hr
+      footer
+        p © Company 2012
+
+    != javascript_include_tag('http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js', 'bootstrap', 'rails', 'application')

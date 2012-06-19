@@ -1,0 +1,31 @@
+.page-header
+  h1 Details of content
+
+table.table.table-bordered
+  tbody(about=path_to.content(content))
+    tr
+      th type
+      td= content.type
+
+    tr
+      th text
+      td= content.text
+
+    tr
+      th filename
+      td= content.filename
+
+    tr
+      th editable_begin
+      td= content.editable_begin
+
+    tr
+      th editable_end
+      td= content.editable_end
+
+
+.well
+  != link_to('Edit', path_to.edit_content(content), {class: 'btn primary'}) + ' '
+  != link_to('Delete', path_to.content(content), {class: 'btn danger', method: 'delete', remote: true, jsonp: '(function (u) { location.href = u; })'})
+  span= ' or '
+  != link_to('Back to index', path_to.contents())

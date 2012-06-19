@@ -1,0 +1,20 @@
+.control-group
+  != form.label("type", false, {class: "control-label"})
+  .controls
+    != form.input("type")
+.control-group
+  != form.label("text", false, {class: "control-label"})
+  .controls
+    != form.input("text")
+.control-group
+  != form.label("filename", false, {class: "control-label"})
+  .controls
+    != form.input("filename")
+.control-group
+  != form.label("editable_begin", false, {class: "control-label"})
+  .controls
+    != form.input("editable_begin")
+.control-group
+  != form.label("editable_end", false, {class: "control-label"})
+  .controls
+    != form.input("editable_end")
